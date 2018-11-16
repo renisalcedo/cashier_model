@@ -14,17 +14,9 @@ class Employee:
         :type username: str
         :type password: str
         """
-        self.name = name
-        self.username = username
-        self.password = password
-
-        # ADD DATA INTO DATABASE
-        data = (self.name, self.username, self.password)
+        data = (name, username, password)
         self.cursor.execute('INSERT INTO {0[0]} ({0[1]}, {0[2]}, {0[3]}) \
                             VALUES (\"{1[0]}\", \"{1[1]}\", \"{1[2]}\")'.format(self.table_cols, data))
-
-        # GETS ID FOR THE NEW EMPLOYEE
-        self.id = self.cursor.lastrowid
 
     def delete(self, id):
         """ Will delete an Employee from the database
