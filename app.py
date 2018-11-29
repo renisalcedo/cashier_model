@@ -1,7 +1,6 @@
 # this is the class that runs the database
-
 from db.db import connectdb
-
+from src.Employee import Employee
 
 db = connectdb()
 
@@ -24,5 +23,3 @@ db_cursor.execute("CREATE TABLE IF NOT EXISTS MISC "
 
 db_cursor.execute("CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INT AUTO_INCREMENT PRIMARY KEY,"
                   "FIRSTNAME VARCHAR(255), USERNAME VARCHAR (255), PASSWORD VARCHAR (255))")
-
-
